@@ -1,0 +1,24 @@
+{
+  "name": "tddlab1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amshholland/tddLab1.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/amshholland/tddLab1/issues"
+  },
+  "homepage": "https://github.com/amshholland/tddLab1#readme",
+  "description": ""
+}

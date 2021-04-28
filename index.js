@@ -1,13 +1,14 @@
 function translate(word) {
     word = word.toLowerCase();
-    let vowels = ["a", "e", "i", "o", "u"];
-    if (vowels.includes(word[0])) {
+    const vowels = /[aeiou]/;
+    if (word[0].match(vowels)) {
         return `${word}way`;
     }
     else {
-        let index = word.search;
-        return word.slice(index) + word.slice(0, index) + 'ay';
+        let vowelFound = vowels.exec(word);
+
+        console.log(vowelFound.index);
+        return word.slice(vowelFound.index) + word.slice(0, vowelFound.index) + 'ay';
     }
 }
-
 module.exports.translate = translate;

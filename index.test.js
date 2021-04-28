@@ -1,35 +1,45 @@
 const { translate } = require('./index');
 
 describe('translate function', () => {
-    // INPUTS -> OUTPUT
-    // apple -> appleway
-    test('words starting with a', () => {
+    test('words starting with vowel', () => {
         let result = translate('apple');
         expect(result).toEqual('appleway');
     });
-    // Elephant -> elephatway
-    test('words starting with w/ uppercase E', () => {
+    test('words starting with w/ uppercase vowel', () => {
         let result = translate('Elephant');
         expect(result).toEqual('elephantway');
     });
-    // igloo -> iglooway
-    test('words starting with i', () => {
-        let result = translate('igloo');
+    test('words starting with vowel, uppercase in word', () => {
+        let result = translate('igLoo');
         expect(result).toEqual('iglooway');
     });
-    // owl -> owlway
-    test('words starting with o', () => {
-        let result = translate('owl');
-        expect(result).toEqual('owlway');
+    test('words starting with oo', () => {
+        let result = translate('oowl');
+        expect(result).toEqual('oowlway');
     });
-    // ukulele -> ukuleleway
-    test('words starting with u', () => {
-        let result = translate('ukulele');
-        expect(result).toEqual('ukuleleway');
+    test('word with just two vowels ee', () => {
+        let result = translate('ee');
+        expect(result).toEqual('eeway');
     });
-    // ukulele -> ukuleleway
-    test('words starting with u', () => {
-        let result = translate('pulele');
-        expect(result).toEqual('ulelepay');
+    test('words starting with consonant', () => {
+        let result = translate('potato');
+        expect(result).toEqual('otatopay');
     });
+    test('words starting with consonant followed by two vowels', () => {
+        let result = translate('poem');
+        expect(result).toEqual('oempay');
+    });
+    test('words starting with two consonants', () => {
+        let result = translate('champagne');
+        expect(result).toEqual('ampagnechay');
+    });
+    test('words starting with three consonants', () => {
+        let result = translate('throat');
+        expect(result).toEqual('oatthray');
+    });
+    test('all capped letters converted to lowercase', () => {
+        let result = translate('HELLO');
+        expect(result).toEqual('ellohay');
+    });
+
 })
